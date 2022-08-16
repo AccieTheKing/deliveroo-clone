@@ -1,11 +1,14 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { View, Text, SafeAreaView, Platform, Image, TextInput, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { UserIcon, ChevronDownIcon, SearchIcon, AdjustmentsIcon } from 'react-native-heroicons/outline';
 import Categories from '../components/Categories';
+import FeaturedRow from '../components/FeaturedRow';
+import FeatureData from '../data/featured';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
+  const [featuredCategories] = useState(FeatureData);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -44,9 +47,18 @@ const HomeScreen = () => {
           paddingBottom: 100,
         }}
       >
+        {/* Categories */}
         <Categories />
 
-        {/* Featured rows */}
+        {/* Featured */}
+        {featuredCategories.map((category) => (
+          <FeaturedRow
+            key={category.id}
+            id={category.id}
+            title={category.title}
+            description={category.short_description}
+          />
+        ))}
       </ScrollView>
     </SafeAreaView>
   );
