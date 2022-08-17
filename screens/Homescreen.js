@@ -1,7 +1,7 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
-import { View, Text, SafeAreaView, Platform, Image, TextInput, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { UserIcon, ChevronDownIcon, SearchIcon, AdjustmentsIcon } from 'react-native-heroicons/outline';
+import React, { useLayoutEffect, useState } from 'react';
+import { Image, Platform, SafeAreaView, ScrollView, Text, TextInput, View } from 'react-native';
+import { AdjustmentsIcon, ChevronDownIcon, SearchIcon, UserIcon } from 'react-native-heroicons/outline';
 import Categories from '../components/Categories';
 import FeaturedRow from '../components/FeaturedRow';
 import FeatureData from '../data/featured';
