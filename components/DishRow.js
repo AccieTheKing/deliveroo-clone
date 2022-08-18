@@ -28,7 +28,7 @@ const DishRow = ({ id, name, description, price, image }) => {
           <View className="flex-1 pr-2">
             <Text className="text-lg mb-1">{name}</Text>
             <Text className="text-gray-400">{description}</Text>
-            <Text className="text-gray-400 mt-2">{price}</Text>
+            <Text className="text-gray-400 mt-2">&euro; {price}</Text>
           </View>
 
           <View>
