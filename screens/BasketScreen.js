@@ -75,10 +75,13 @@ const BasketScreen = () => {
 
           <View className="flex-row justify-between">
             <Text className="">Order Total</Text>
-            <Text className="font-extrabold">&euro;{basketTotal + 2.99}</Text>
+            <Text className="font-extrabold">&euro;{(basketTotal + 2.99).toFixed(2)}</Text>
           </View>
 
-          <TouchableOpacity className="bg-[#00CCBB] rounded-lg p-4">
+          <TouchableOpacity
+            onPress={() => navigation.navigate('PreparingOrderScreen')}
+            className="bg-[#00CCBB] rounded-lg p-4"
+          >
             <Text className="text-white text-center text-lg font-bold">Place Order</Text>
           </TouchableOpacity>
         </View>
